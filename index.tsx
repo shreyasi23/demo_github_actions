@@ -12,7 +12,6 @@ export const processJSON = async (file, isJsonB) => {
 	const data = fs.readFileSync(file, "utf8");
 	// console.log("data: ", data);
 	const js = JSON.parse(data);
-	// console.log("js: ", js);
 	const page = new Widget(js);
 	// console.log("page: ", page.processedChildren);
 	processSetUp(page);
