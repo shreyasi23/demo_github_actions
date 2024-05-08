@@ -13,9 +13,9 @@ import {
 
 // Verify that the number of instances in both JSON A and JSON B is same
 test("Verify that the number of instances in both JSON A and JSON B is same", async () => {
-	const jsonA = await processJSON("./jsonFiles/FISPAge1A.json", false);
+	const jsonA = await processJSON("./jsonFiles/page4A.json", false);
 	console.log("jsonA loaded successfully");
-	const jsonB = await processJSON("./jsonFiles/FISPAge1B.json", true);
+	const jsonB = await processJSON("./jsonFiles/page4B.json", true);
 	console.log("jsonB loaded successfully");
 
 	// const jsonB = processJSON("./FISPAge1B.json")
@@ -25,9 +25,9 @@ test("Verify that the number of instances in both JSON A and JSON B is same", as
 
 // Verify ID and parent ID
 test("Verify the node ID and parent ID in JSON B", async () => {
-	const jsonA = await processJSON("./jsonFiles/FISPAge1A.json", false);
+	const jsonA = await processJSON("./jsonFiles/page4A.json", false);
 	console.log("jsonA loaded successfully");
-	const jsonB = await processJSON("./jsonFiles/FISPAge1B.json", true);
+	const jsonB = await processJSON("./jsonFiles/page4B.json", true);
 	console.log("jsonB loaded successfully");
 	let res = checkParentID(jsonA, jsonB);
 	expect(res).toBe(true);
@@ -35,17 +35,17 @@ test("Verify the node ID and parent ID in JSON B", async () => {
 
 // Verify the type of node
 test("Verify the type of node", async () => {
-	const jsonA = await processJSON("./jsonFiles/FISPAge1A.json", false);
+	const jsonA = await processJSON("./jsonFiles/page4A.json", false);
 	console.log("jsonA loaded successfully");
-	const jsonB = await processJSON("./jsonFiles/FISPAge1B.json", true);
+	const jsonB = await processJSON("./jsonFiles/page4B.json", true);
 	console.log("jsonB loaded successfully");
 	let res = checkNodeType(jsonA, jsonB);
 	expect(res).toBe(true);
 });
 
 // Verify if node of type TEXT has fontObject property
-test.only("Verify if node of type TEXT has fontObject property", async () => {
-	const jsonB = await processJSON("./jsonFiles/FISPAge1B.json", false);
+test("Verify if node of type TEXT has fontObject property", async () => {
+	const jsonB = await processJSON("./jsonFiles/page4B.json", false);
 	console.log("jsonB loaded successfully");
 	let res = checkHasFontObject(jsonB);
 	expect(res).toBe(true);
@@ -53,9 +53,9 @@ test.only("Verify if node of type TEXT has fontObject property", async () => {
 
 // Verify if processedChildren property exists for node in JSON B and if it has inferredAutoLayoutML as a property and value of spacing and padding is either 0 or a positive value
 test("Verify if processedChildren property exists for node in JSON B and if it has inferredAutoLayoutML as a property and value of spacing and padding is either 0 or a positive value", async () => {
-	const jsonA = await processJSON("./jsonFiles/FISPAge1A.json", false);
+	const jsonA = await processJSON("./jsonFiles/page4A.json", false);
 	console.log("jsonA loaded successfully");
-	const jsonB = await processJSON("./jsonFiles/FISPAge1B.json", true);
+	const jsonB = await processJSON("./jsonFiles/page4B.json", true);
 	console.log("jsonB loaded successfully");
 	let res = checkHasIALML(jsonA, jsonB);
 	expect(res).toBe(false);
@@ -63,9 +63,9 @@ test("Verify if processedChildren property exists for node in JSON B and if it h
 
 // Verify the category of node
 test("Verify if category of node is same in both JOSN A and JSON B", async () => {
-	const jsonA = await processJSON("./jsonFiles/FISPAge1A.json", false);
+	const jsonA = await processJSON("./jsonFiles/page4A.json", false);
 	console.log("jsonA loaded successfully");
-	const jsonB = await processJSON("./jsonFiles/FISPAge1B.json", true);
+	const jsonB = await processJSON("./jsonFiles/page4B.json", true);
 	console.log("jsonB loaded successfully");
 	let res = checkCategory(jsonA, jsonB);
 	expect(res).toBe(false);
