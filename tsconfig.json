@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+        "jsx": "react",
+        "typeRoots": ["./node_modules/@types", "./node_modules/@figma"],
+        "esModuleInterop": true,
+        "strict": false
+    }
+}
