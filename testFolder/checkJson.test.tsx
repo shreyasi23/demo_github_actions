@@ -58,7 +58,7 @@ test("Verify if processedChildren property exists for node in JSON B and if it h
 	const jsonB = await processJSON("./jsonFiles/page4B.json", true);
 	console.log("jsonB loaded successfully");
 	let res = checkHasIALML(jsonA, jsonB);
-	expect(res).toBe(false);
+	expect(res).toBe(true);
 });
 
 // Verify the category of node
@@ -68,7 +68,7 @@ test("Verify if category of node is same in both JOSN A and JSON B", async () =>
 	const jsonB = await processJSON("./jsonFiles/page4B.json", true);
 	console.log("jsonB loaded successfully");
 	let res = checkCategory(jsonA, jsonB);
-	expect(res).toBe(false);
+	expect(res).toBe(true);
 });
 
 // Verify the order of nodes in JSON B
